@@ -59,7 +59,7 @@ public class TaskListController {
 
     }
 
-    @DeleteMapping(path = "/{task_list_id")
+    @DeleteMapping(path = "/{task_list_id}")
     public void deleteTaskList(@PathVariable("task_list_id") UUID taskListId){
         taskListService.deleteTaskList(taskListId);
     }
