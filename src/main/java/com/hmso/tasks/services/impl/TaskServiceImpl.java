@@ -76,7 +76,7 @@ public class TaskServiceImpl implements TaskService {
         if(null == task.getId()){
             throw new IllegalArgumentException("Task must have an ID!");
         }
-        if(Objects.equals(taskId, task.getId())){
+        if(!Objects.equals(taskId, task.getId())){
             throw new IllegalArgumentException("Task IDs do not match!");
         }
         if(null == task.getPriority()) {
