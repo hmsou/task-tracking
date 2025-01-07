@@ -7,6 +7,7 @@ import com.hmso.tasks.domain.entities.TaskStatus;
 import com.hmso.tasks.repositories.TaskListRepository;
 import com.hmso.tasks.repositories.TaskRepository;
 import com.hmso.tasks.services.TaskService;
+import jakarta.transaction.Transactional;
 import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
@@ -99,6 +100,7 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.save(existingTask);
     }
 
+    @Transactional
     @Override
     public void deleteTask(UUID taskListId, UUID taskId) {
         taskRepository.deleteByTaskListIdAndId(taskListId, taskId);
